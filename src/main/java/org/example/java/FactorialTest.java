@@ -4,7 +4,7 @@ public class FactorialTest {
 
     //재귀호출을 이용하여 1~20 팩토리얼 구하기
     static long factorial(int n) {
-        if(n<=0 || n>20) return -1; //스택오버플로우 방지 
+        if(n<=0 || n>20) return -1; //스택오버플로우 방지
         if(n<=1) return 1;
         return n * factorial(n-1);
     }

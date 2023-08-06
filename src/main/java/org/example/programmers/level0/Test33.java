@@ -1,5 +1,7 @@
 package org.example.programmers.level0;
 
+import java.util.stream.IntStream;
+
 /**
  * 문제이름 : 첫 번째로 나오는 음수
  *
@@ -26,11 +28,17 @@ public class Test33 {
         }
         return answer;
     }
+    //다른 사람 풀이
     public int otherSolution(int[] num_list) {
         for (int i = 0;i < num_list.length;i++)
             if (num_list[i] < 0)
                 return i;
         return -1;
+    }
+    //다른 사람 풀이
+    public int otherSolution2(int[] num_list) {
+        final int LENGHT = num_list.length;
+        return IntStream.range(0, LENGHT).filter(i -> num_list[i] < 0).findFirst().orElse(-1);
     }
 
 }

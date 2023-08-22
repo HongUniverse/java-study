@@ -19,6 +19,32 @@ package org.example.programmers.level0;
  */
 public class Test135 {
     public int solution(int n) {
+        int result = 1;
+        while(getFactorial(result) <= n){
+            result ++;
+        }
+        return result -1;
+    }
+    public static int getFactorial(int num){
+        if(num<= 1){
+            return num;
 
+        }else{
+            return getFactorial(num-1) * num;
+        }
+    }
+
+    public int otehrSolution(int n) {
+        int fac = 1;
+        int i = 0;
+        while(true){
+            if(fac <=n){
+                fac *= i + 1;
+                i++;
+            }else{
+                break;
+            }
+        }
+        return i -1;
     }
 }
